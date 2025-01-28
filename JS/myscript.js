@@ -65,18 +65,18 @@ function appendNewTask() {
         // Add task text
         const taskText = document.createElement('p');
         taskText.textContent = taskInput.value.trim();
-        taskText.classList.add('mb-0');
+        taskText.classList.add('mb-5');
         taskItem.appendChild(taskText);
 
-        // Add delete button
-        const deleteButton = document.createElement('button');
-        deleteButton.innerHTML = '<i class="fa-solid fa-trash"></i>';
-        deleteButton.classList.add('btn', 'btn-danger',);
-        taskItem.appendChild(deleteButton);
+        // Add completed button
+        const completedButton = document.createElement('button');
+        completedButton.innerHTML = '<i class="fa-solid fa-check"></i>';
+        completedButton.classList.add('btn', 'btn-success',);
+        taskItem.appendChild(completedButton);
 
-        // Delete task functionality
-        deleteButton.addEventListener('click', () => {
-            tasksContainer.removeChild(taskItem);
+        // Completed task functionality
+        completedButton.addEventListener('click', () => {
+            taskItem.classList.add('completed');
         });
 
         // Append the task to the container

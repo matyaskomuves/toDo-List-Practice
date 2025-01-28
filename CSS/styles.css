@@ -51,10 +51,24 @@ i {
     animation: slideIn 1s forwards ease;
 }
 
+.completed {
+    filter: opacity(60);
+    text-decoration: line-through;
+    background-color: lightgreen;
+    color: white;
+}
+
 body.dark .card {
     background-color: rgb(62, 62, 62);
     color: inherit !important;
     box-shadow: 0 0 10px rgba(141, 141, 141, 0.2);
+}
+
+body.dark .completed {
+    filter: opacity(60);
+    text-decoration: line-through;
+    background-color: darkgreen;
+    color: lightgray;
 }
 
 /*Dark Mode*/
