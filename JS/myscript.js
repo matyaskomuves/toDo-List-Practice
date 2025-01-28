@@ -24,9 +24,14 @@ toggleButton.addEventListener('click', () => {
 // ADD Task Button 
 
 function addNewTask() {
-    const taskInput = document.createElement('input');
     const inputContainer = document.getElementById('new-task-field');
 
+    if (inputContainer.querySelector('.task-input')) {
+        inputContainer.querySelector('.task-input').focus();
+        return;
+    }
+
+    const taskInput = document.createElement('input');
 
     taskInput.setAttribute('type', 'text');
     taskInput.setAttribute('placeholder', 'Enter a new task...');
@@ -41,5 +46,4 @@ function addNewTask() {
     addButton.classList.add('btn', 'btn-primary', 'add-task-button');
 
     inputContainer.appendChild(addButton);
-
 }
