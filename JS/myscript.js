@@ -27,7 +27,8 @@ function addNewTask() {
     const inputContainer = document.getElementById('new-task-field');
 
     if (inputContainer.querySelector('.task-input')) {
-        inputContainer.querySelector('.task-input').focus();
+        const taskModal = new bootstrap.Modal(document.getElementById('task-modal'));
+        taskModal.show();
         return;
     }
 
