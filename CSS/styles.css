@@ -18,11 +18,6 @@ i {
     cursor: pointer;
 }
 
-.dark {
-    background-color: #0a0a0a;
-    color: lightgray;
-}
-
 .navbar,
 .navbar-brand {
     border-radius: 10px !important;
@@ -43,6 +38,30 @@ i {
     &:hover {
         border-radius: 15px;
     }
+}
+
+.card {
+    border-radius: 10px;
+    margin: 10px 15px;
+    padding: 10px;
+    width: 150px;
+    height: 150px;
+    transition: all 0.5s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1s forwards ease;
+}
+
+body.dark .card {
+    background-color: rgb(62, 62, 62);
+    color: inherit !important;
+    box-shadow: 0 0 10px rgba(141, 141, 141, 0.2);
+}
+
+/*Dark Mode*/
+
+.dark {
+    background-color: #0a0a0a;
+    color: lightgray;
 }
 
 body.dark .nav-link {
