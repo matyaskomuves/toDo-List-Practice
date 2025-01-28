@@ -91,3 +91,12 @@ function appendNewTask() {
         alert('Please enter a task!');
     }
 }
+
+// Clear All Completed Tasks
+function clearCompletedTasks() {
+    const completedTasks = document.querySelectorAll('.completed');
+
+    completedTasks.forEach((task) => {
+        task.parentElement.removeChild(task);
+    });
+}
