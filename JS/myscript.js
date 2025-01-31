@@ -38,7 +38,16 @@ function addNewTask() {
     taskInput.setAttribute('placeholder', 'Enter a new task...');
     taskInput.setAttribute('required', '');
     taskInput.classList.add('task-input', 'form-control', 'w-50');
+
     inputContainer.appendChild(taskInput);
+
+    const dateInput = document.createElement('input');
+    dateInput.setAttribute('type', 'date');
+    dateInput.setAttribute('required', '');
+    dateInput.classList.add('date-input', 'form-control', 'w-25', 'ms-2',);
+
+    inputContainer.appendChild(dateInput);
+
 
     const addButton = document.createElement('button');
     addButton.innerHTML = '<i class="fa-solid fa-plus"></i>';
@@ -52,17 +61,22 @@ function addNewTask() {
 
 function appendNewTask() {
     const taskInput = document.querySelector('.task-input');
+    const dateInput = document.querySelector('.date-input');
     const tasksContainer = document.getElementById('tasks-container');
 
-    if (taskInput && taskInput.value.trim()) {
-        const taskItem = document.createElement('div');
+    if (taskInput && taskInput.value.trim() && dateInput && dateInput.value) {
+        const taskItem = document.createElement('span');
         taskItem.classList.add('card', 'task-card', 'mb-2', 'p-2', 'd-flex', 'align-items-center', 'justify-content-center');
-
 
         const taskText = document.createElement('p');
         taskText.textContent = taskInput.value.trim();
         taskText.classList.add('mb-5');
         taskItem.appendChild(taskText);
+
+        const taskDate = document.createElement('div');
+        taskDate.textContent = `Due: ${dateInput.value}`;
+        taskDate.classList.add('badge', 'bg-warning', 'text-dark', 'me-3');
+        taskItem.appendChild(taskDate);
 
         const completedButton = document.createElement('button');
         completedButton.innerHTML = '<i class="fa-solid fa-check"></i>';
@@ -76,7 +90,9 @@ function appendNewTask() {
         tasksContainer.appendChild(taskItem);
 
         taskInput.value = '';
+        dateInput.value = '';
         taskInput.parentElement.removeChild(taskInput);
+        dateInput.parentElement.removeChild(dateInput);
         const addButton = document.getElementById('add-new-task-btn');
         addButton.parentElement.removeChild(addButton);
     } else {
