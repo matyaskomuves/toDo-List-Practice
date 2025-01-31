@@ -3,6 +3,9 @@ html {
 }
 
 body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
     padding: 10px;
     margin: 0;
     box-sizing: border-box;
@@ -16,6 +19,10 @@ i {
     color: inherit !important;
     font-size: 20px;
     cursor: pointer;
+}
+
+footer i {
+    font-size: 40px;
 }
 
 .navbar,
@@ -58,17 +65,27 @@ i {
     color: white;
 }
 
-body.dark .card {
-    background-color: rgb(62, 62, 62);
-    color: inherit !important;
-    box-shadow: 0 0 10px rgba(141, 141, 141, 0.2);
+
+.task-input {
+    margin-right: 1rem;
+    animation: slideIn 1s forwards ease;
 }
 
-body.dark .completed {
-    filter: opacity(60);
-    text-decoration: line-through;
-    background-color: darkgreen;
-    color: lightgray;
+.modal-content {
+    border: 1px solid #0a0a0a;
+    background-color: rgba(255, 255, 255, 0.95);
+    color: #0a0a0a;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(10px);
+}
+
+footer {
+    margin-top: auto;
+    width: 100%;
+    height: fit-content;
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 10px 0;
 }
 
 /*Dark Mode*/
@@ -87,14 +104,39 @@ body.dark .navbar-toggler-icon {
     border-color: whitesmoke;
 }
 
-.task-input {
-    margin-right: 1rem;
-    animation: slideIn 1s forwards ease;
-}
-
 body.dark .task-input {
     background-color: darkgray;
     color: lightgray
+}
+
+body.dark .card {
+    background-color: rgb(62, 62, 62);
+    color: inherit !important;
+    box-shadow: 0 0 10px rgba(141, 141, 141, 0.2);
+}
+
+body.dark .completed {
+    filter: opacity(60);
+    text-decoration: line-through;
+    background-color: darkgreen;
+    color: lightgray;
+}
+
+body.dark .modal-content {
+    border: 1px solid lightgray;
+    background-color: rgba(0, 0, 0, 0.5) !important;
+    color: lightgray !important;
+    transition: all 0.5s ease;
+    backdrop-filter: blur(10px);
+}
+
+body.dark footer {
+    background-color: inherit !important;
+    color: inherit !important;
+}
+
+body.dark .text-muted {
+    color: gray !important;
 }
 
 @keyframes slideIn {
