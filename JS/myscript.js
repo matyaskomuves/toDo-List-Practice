@@ -75,7 +75,7 @@ function appendNewTask() {
 
         const taskDate = document.createElement('div');
         taskDate.textContent = `Due: ${dateInput.value}`;
-        taskDate.classList.add('badge', 'bg-warning', 'text-dark', 'me-3');
+        taskDate.classList.add('date-badge', 'card', 'bg-warning', 'text-dark', 'me-3');
         taskItem.appendChild(taskDate);
 
         const completedButton = document.createElement('button');

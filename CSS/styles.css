@@ -1,3 +1,4 @@
+/* Global/Element Styles */
 html {
     scroll-behavior: smooth;
 }
@@ -24,6 +25,8 @@ i {
 footer i {
     font-size: 40px;
 }
+
+/* Content */
 
 .navbar,
 .navbar-brand {
@@ -63,14 +66,22 @@ footer i {
 }
 
 .card {
+    height: fit-content;
+    width: fit-content;
     border-radius: 10px;
     margin: 10px 15px;
-    padding: 10px;
-    width: 150px;
-    height: 150px;
+    padding: 20px 25px;
     transition: all 0.5s ease;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     animation: slideIn 1s forwards ease;
+}
+
+.date-badge {
+    font-size: 12px;
+    border-radius: 5px;
+    padding: 2px 5px;
+    margin-left: 10px;
+    transition: all 0.3s ease;
 }
 
 .completed {
@@ -154,6 +165,8 @@ body.dark footer {
 body.dark .text-muted {
     color: gray !important;
 }
+
+/* Aniamtions */
 
 @keyframes slideIn {
     0% {
