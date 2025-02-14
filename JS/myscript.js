@@ -65,7 +65,7 @@ function appendNewTask() {
     const tasksContainer = document.getElementById('tasks-container');
 
     if (taskInput && taskInput.value.trim() && dateInput && dateInput.value) {
-        const taskItem = document.createElement('span');
+        const taskItem = document.createElement('div');
         taskItem.classList.add('card', 'task-card', 'mb-2', 'p-2', 'd-flex', 'align-items-center', 'justify-content-center');
 
         const taskText = document.createElement('p');
@@ -108,3 +108,15 @@ function clearCompletedTasks() {
         task.parentElement.removeChild(task);
     });
 }
+
+//Sortable.js
+
+const sortableTasks = document.getElementById("tasks-container");
+
+new Sortable(sortableTasks, {
+    animation: 100,
+    ghostClass: "dragging",
+    onEnd: function (evt) {
+        console.log("Reordered:", evt.newIndex);
+    }
+})
